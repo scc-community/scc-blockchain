@@ -1,0 +1,6 @@
+
+>peer chaincode install -n hlx -v 1.1 -p github.com/chaincode_example02/go
+>peer chaincode instantiate -o orderer.example.com:7050 -C mychannel -n hlx -v 1.1 -c '{"Args":["init","a", "100", "b","200"]}' -P "OR ('Org1.member','Org2.member')"
+>peer chaincode invoke -o orderer.example.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n hlx -c '{"Args":["invoke","a","b","10"]}'
+>peer chaincode invoke -o orderer.example.com:7050 -C mychannel -n hlx -c '{"Args":["invoke","a","b","10"]}'
+>peer chaincode query -C mychannel -n hlx -c '{"Args":["query","a"]}'

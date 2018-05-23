@@ -85,7 +85,7 @@ Orderer: &OrdererDefaults
     OrdererType: solo
 
     Addresses:
-        - orderer.sourcecc.io:7050
+        - orderer:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 2s
